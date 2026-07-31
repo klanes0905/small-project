@@ -1,0 +1,29 @@
+body{
+    background-color: rgba(29, 25, 25, 0.959);
+}
+
+#countLabel{
+    font-size: 10rem;
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+.btnContainer{
+    text-align: center;
+}
+
+.btn{
+    padding: 10px;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    background-color: rgb(54, 231, 54);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px whitesmoke;
+    transition: background-color .5s ease, transform .5s;
+}
+.btn:hover{
+    background-color: rgb(5, 128, 5);
+    transform: scale(1.1);
+}
