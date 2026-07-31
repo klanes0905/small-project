@@ -1,0 +1,70 @@
+body{
+    background-color: rgb(37, 34, 34);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+    animation: ani 6s infinite;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    transition: transform 1s;
+}
+
+.labelContainer{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    width: min(90%, 500px);
+    border: 2px solid black;
+    margin: 2rem auto;
+    border-radius: 5px;
+    background-color: black;
+    border-radius: 10px;
+}
+.numbers{
+    font-size: 4rem;
+    color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+label{
+    color: white;
+    font-size: 3rem;
+}
+button{
+    width: 10rem;
+    height: 3rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    background-color: red;
+    color:white;
+    transition: transform .3s, background-color .3s;
+}
+button:hover{
+    transform: scale(1.1);
+    background-color: darkred;
+}
+button:active{
+    transform: scale(1);
+    background-color: rgb(43, 1, 1);
+}
+#win{
+    animation: winimation 5s infinite;
+}
+
+@keyframes winimation {
+    50%  {color: blue; transform: scale(1.1);}
+    100% {color: yellow; transform: scale(1);}
+}
+
+@keyframes ani {
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
