@@ -4,7 +4,7 @@ const valueThree = document.getElementById("val3");
 const userCoint = document.getElementById("userCoint");
 const spinBtn = document.getElementById("btn");
 const win = document.getElementById("win");
-const hiddenBtn = document.getElementById("hiddentBtn");
+const hiddenBtn = document.getElementById("hiddenBtn");
 
 
 let wins;
@@ -117,7 +117,7 @@ function over(){
     win.textContent = "Game Over"
 }
 
-function add(){
+hiddenBtn.onclick = function(){
   coins += 10;
   userCoint.textContent = coins;
   localStorage.setItem("userCoins", coins);
