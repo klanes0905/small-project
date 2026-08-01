@@ -68,3 +68,21 @@ button:active{
     50% {transform: scale(1.1);}
     100% {transform: scale(1);}
 }
+
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 3rem;
+    }
+    .labelContainer{
+        width: 90%;
+        height: 200px;
+    }
+    .numbers{
+        font-size: 3rem;
+        margin-top: 60px;
+    }
+    label{
+        font-size: 2rem;
+    }   
+}
