@@ -1,13 +1,22 @@
-let valueOne = document.getElementById("val1");
-let valueTwo = document.getElementById("val2");
-let valueThree = document.getElementById("val3");
-let userCoint = document.getElementById("userCoint");
-let spinBtn = document.getElementById("btn");
-let win = document.getElementById("win");
-let coins = 10;
+const valueOne = document.getElementById("val1");
+const valueTwo = document.getElementById("val2");
+const valueThree = document.getElementById("val3");
+const userCoint = document.getElementById("userCoint");
+const spinBtn = document.getElementById("btn");
+const win = document.getElementById("win");
+const hiddenBtn = document.getElementById("hiddentBtn");
+
+
 let wins;
 let prize;
 
+let coins = localStorage.getItem("userCoins") !== null ? Number(localStorage.getItem("userCoins")) : 10;
+
+if(coins <= 0 ){
+    over();
+}
+
+userCoint.textContent = coins;
 const symbols = [
     "🍒",
     "🍋",
@@ -28,11 +37,13 @@ valueThree.textContent = symbols[random3];
 console.log(random, random2, random3)
 
 
-
 spinBtn.onclick = function(){
     wins= "";
     coins--;
+
     userCoint.textContent = coins;
+    localStorage.setItem("userCoins", coins);
+
     win.textContent = wins;
     spinBtn.disabled = true;
     
@@ -79,11 +90,11 @@ console.log(random, random2, random3)
         else{
             win.textContent = "No win"
         }
-        spinBtn.disabled = false;
-
-        if(coins == 0 ){
-        over();
-    }
+        if(coins <= 0 ){
+          over();
+        } else{
+          spinBtn.disabled = false;
+        }
 
     },2000);
 }
@@ -91,15 +102,23 @@ console.log(random, random2, random3)
 function reward(amount){
     coins += amount;
     userCoint.textContent = coins;
+    localStorage.setItem("userCoins", coins);
     win.textContent = `You won ${amount} pesos!`;
 }
 function jackpot(amount){
     coins += amount;
     userCoint.textContent = coins;
+    localStorage.setItem("userCoins", coins);
     win.textContent = `You hit the jackpot ${amount} pesos!`;
 }
 
 function over(){
     spinBtn.disabled = true;
     win.textContent = "Game Over"
+}
+
+function add(){
+  coins += 10;
+  userCoint.textContent = coins;
+  localStorage.setItem("userCoins", coins);
 }

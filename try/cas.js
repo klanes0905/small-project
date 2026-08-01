@@ -25,7 +25,7 @@ spinBtn.onclick = function(){
         valueTwo.textContent = Math.floor(Math.random()*6)+1;
         valueThree.textContent = Math.floor(Math.random()*6)+1;
 
-    },8);
+    },50);
 
     setTimeout(() => {
 
@@ -46,6 +46,9 @@ spinBtn.onclick = function(){
           jackpot(10);
         } else if(value2 == 3){
           reward(2);
+        }
+        else{
+            win.textContent = "No win"
         }
         spinBtn.disabled = false;
 
