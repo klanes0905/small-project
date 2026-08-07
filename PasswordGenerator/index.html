@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styels.css">
+    <title>PasswordGenerator</title>
+</head>
+<body>
+    <form class="passGenHolder">
+        <h1>Random Password Generator IDOL</h1><br>
+
+        <div class="container">
+            <label for="lengthNum">Length: <input type="number" id="lengthNum" min="1"></label>
+
+            <label for="addLow">Lowercase: <input type="checkbox" id="addLow"></label>
+
+            <label for="addHigh">Uppercase: <input type="checkbox" id="addHigh"></label>
+
+            <label for="addNum">Number: <input type="checkbox" id="addNum"></label>
+        
+            <label for="addSpecial">Special: <input type="checkbox" id="addSpecial"></label>
+
+            <button id="generate">Generate</button>
+        </div>
+        <div class="output">
+            <p id="output"></p>
+        </div>
+
+        
+    </form>
+    <script src="scripts.js"></script>
+</body>
+</html>
