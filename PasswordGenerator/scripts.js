@@ -11,15 +11,15 @@ const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const num = "0123456789";
 const special = "!@#$%^&*(){}";
 
-let allowedChar = "";
-let result = "";
-
 generate.onclick = function(e){
     e.preventDefault();
-    generatePass(lengthNum, addLow, addHigh, addNum, addSpecial);
+    generatePass();
 }
 
-function generatePass(lengthNum, addLow, addHigh, addNum, addSpecial){
+function generatePass(){
+
+    let allowedChar = "";
+    let result = "";
 
     if(addLow.checked){
         allowedChar += low;
@@ -34,12 +34,15 @@ function generatePass(lengthNum, addLow, addHigh, addNum, addSpecial){
         allowedChar+=special;
     }
 
-    if(lengthNum.value){
+    if(allowedChar.length === 0){
+        output.textContent = `Pick one or more to generate the random password`;
+    }
+    else if(lengthNum.value){
         for(let i = 0; i < lengthNum.value; i++ ){
             let random = Math.floor(Math.random()*allowedChar.length);
             output.textContent = `Result: ${result += allowedChar[random]}`
         }
-    }
+    } 
     else{
         output.textContent = `Please input a number`;
     }
@@ -47,4 +50,9 @@ function generatePass(lengthNum, addLow, addHigh, addNum, addSpecial){
 }
 
 
+lengthNum.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        submit.click();
+    }
+});
 
