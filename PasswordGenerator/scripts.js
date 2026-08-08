@@ -55,4 +55,3 @@ lengthNum.addEventListener("keypress", function(e){
         submit.click();
     }
 });
-
