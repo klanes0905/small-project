@@ -73,3 +73,39 @@ function longName(element){
 function shortName(element){
   return element.length <= 6;
 }
+
+
+//reduce()
+const prices = [28, 30, 50, 100];
+const news = prices.reduce(total);
+
+console.log(news);
+
+function total(previousNum, nextNum){ // previousNum = 0 nextNum = 28 0+28=28 it will continue until the end number which is 100
+  return previousNum + nextNum;
+}
+
+//reduce() sample 2
+const grades = [80, 90, 95, 85, 100];
+const ave = grades.reduce(average).toFixed(2);
+const getmax = grades.reduce(getMax);
+const getmin = grades.reduce(getMin);
+
+console.log("Average: "+ave/grades.length);
+console.log("Max Grade: "+getmax);
+console.log("Min Grade: "+getmin);
+
+function average(previousNums, nextNums){
+  let add = previousNums + nextNums;
+  return add;
+}
+
+function getMax(prev, next){
+  //return prev > next? prev : next;
+  return Math.max(prev, next);
+}
+
+function getMin(prev, next){
+  return prev < next? prev : next;
+  //return Math.min(prev, next);
+}
